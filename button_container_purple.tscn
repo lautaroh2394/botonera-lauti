@@ -41,7 +41,7 @@ texture_normal = ExtResource("2_volol")
 visible = false
 position = Vector2(130, 134)
 sprite_frames = SubResource("SpriteFrames_f3pv7")
-frame_progress = 0.9890954
+frame_progress = 0.9101996
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

@@ -35,4 +35,8 @@ func _on_texture_button_button_up() -> void:
 		
 func download_audio():
 	print("download audio!")
-	pass
+	var filename = $AudioStreamPlayer.stream.resource_path.replace("res://", "")
+	print(filename)
+	var github_url = "https://github.com/lautaroh2394/botonera-lauti/raw/refs/heads/master/" + filename
+	var js_code = 'open("%s")' % [github_url]
+	JavaScriptBridge.eval(js_code)

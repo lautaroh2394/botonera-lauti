@@ -41,7 +41,7 @@ texture_normal = ExtResource("1_nrgap")
 visible = false
 position = Vector2(130, 134)
 sprite_frames = SubResource("SpriteFrames_53pdp")
-frame_progress = 0.4918681
+frame_progress = 0.2550796
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
