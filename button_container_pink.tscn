@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu7dhocc57vke"]
+
+[ext_resource type="Script" uid="uid://deuquy1p8c606" path="res://button_container_pink.gd" id="1_53pdp"]
+[ext_resource type="Texture2D" uid="uid://cko2labjw635d" path="res://graphics/btn-orange-3.png" id="1_nrgap"]
+[ext_resource type="Texture2D" uid="uid://c7eduuedbshyw" path="res://graphics/btn-orange-0.png" id="3_1dpno"]
+[ext_resource type="Texture2D" uid="uid://c26gnic07w76r" path="res://graphics/btn-orange-1.png" id="4_l2rf8"]
+[ext_resource type="Texture2D" uid="uid://dhxxm3086xyoa" path="res://graphics/btn-orange-2.png" id="5_yb5w7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_53pdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1dpno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l2rf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yb5w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_nrgap")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ButtonContainerPink" type="MarginContainer"]
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+script = ExtResource("1_53pdp")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("1_nrgap")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(130, 134)
+sprite_frames = SubResource("SpriteFrames_53pdp")
+frame_progress = 0.4918681
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
